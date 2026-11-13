@@ -1,0 +1,96 @@
+name: examine
+
+services:
+  # -------------------------------------------------------------------------
+  # MongoDB
+  # -------------------------------------------------------------------------
+  mongo:
+    image: mongo:7
+    container_name: examine-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  # -------------------------------------------------------------------------
+  # Spring Boot application
+  #
+  # Object storage is the external MinIO instance configured through the
+  # S3_* environment variables below (see .env.docker.example).
+  # -------------------------------------------------------------------------
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: examine-app:latest
+    container_name: examine-app
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      SERVER_PORT: 8080
+      DEV: "false"
+      MONGODB_URI: mongodb://mongo:27017/examine
+      # Canonical Spring Boot property; overrides spring.data.mongodb.uri directly.
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/examine
+      # Highest-precedence override, guarantees the container hostname is used.
+      SPRING_APPLICATION_JSON: '{"spring":{"data":{"mongodb":{"uri":"mongodb://mongo:27017/examine"}}}}'
+      # JVM system property (highest precedence of all).
+      JAVA_OPTS: "-Dspring.data.mongodb.uri=mongodb://mongo:27017/examine"
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-at-least-32-characters-long}
+      JWT_ACCESS_VALIDITY: 900
+      JWT_REFRESH_VALIDITY: 2592000
+      COOKIE_SECURED: "false"
+      S3_ENDPOINT: ${S3_ENDPOINT:-https://s3.sardorkhurramov.uz:9001}
+      S3_BUCKET: ${S3_BUCKET:-zarif-aka}
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-admin}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-maxfiy-parol}
+      S3_REGION: ${S3_REGION:-us-east-1}
+      STORAGE_PRESIGNED_URL_EXPIRATION: ${STORAGE_PRESIGNED_URL_EXPIRATION:-900}
+      FACE_SERVICE_URL: http://face-service:8000
+      FACE_MATCH_THRESHOLD: 0.60
+      FACE_GAP_THRESHOLD: 0.08
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:5173}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
+      ADMIN_FULL_NAME: ${ADMIN_FULL_NAME:-Administrator}
+      SEED_TEACHER_USERNAME: ${SEED_TEACHER_USERNAME:-teacher}
+      SEED_TEACHER_PASSWORD: ${SEED_TEACHER_PASSWORD:-teacher123}
+      SEED_TEACHER_FULL_NAME: ${SEED_TEACHER_FULL_NAME:-Teacher}
+      SEED_STUDENT_FULL_NAME: ${SEED_STUDENT_FULL_NAME:-Test Student}
+      SEED_STUDENT_CODE: ${SEED_STUDENT_CODE:-STU-2026-1}
+
+  # -------------------------------------------------------------------------
+  # Optional Python face-recognition microservice.
+  # Start it with:  docker compose --profile face up --build
+  # -------------------------------------------------------------------------
+  face-service:
+    profiles: ["face"]
+    build:
+      context: ./reference-code-for-exam-project/face-service
+      dockerfile: Dockerfile
+    image: examine-face-service:latest
+    container_name: examine-face-service
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      FACE_MODEL: buffalo_s
+      FACE_MATCH_THRESHOLD: 0.60
+      FACE_GAP_THRESHOLD: 0.08
+    volumes:
+      - face-data:/data
+
+volumes:
+  mongo-data:
+  face-data:

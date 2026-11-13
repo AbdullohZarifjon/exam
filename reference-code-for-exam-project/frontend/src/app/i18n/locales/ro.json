@@ -1,0 +1,352 @@
+{
+  "app": {
+    "name": "Platforma de Examene",
+    "tagline": "Sustinere moderna de examene pentru scoli si programe de formare."
+  },
+  "nav": {
+    "dashboard": "Panou",
+    "exams": "Examene",
+    "students": "Elevi",
+    "moderators": "Moderatori",
+    "requests": "Cereri",
+    "signOut": "Deconectare",
+    "signIn": "Conectare",
+    "main": "Meniu principal",
+    "faceEnrollment": "Face enrollment",
+    "staff": "Personal",
+    "verification": "Verification"
+  },
+  "auth": {
+    "login": {
+      "title": "Conectare",
+      "subtitle": "Foloseste contul de personal pentru a accesa platforma.",
+      "email": "Username",
+      "password": "Parola",
+      "submit": "Conectare",
+      "submitting": "Se conecteaza…"
+    },
+    "loggedOut": "Deconectare reusita."
+  },
+  "errors": {
+    "generic": "Ceva nu a mers bine. Incearca din nou.",
+    "network": "Nu putem contacta serverul. Verifica conexiunea.",
+    "badRequest": "Cererea nu a fost valida.",
+    "unauthorized": "Conecteaza-te pentru a continua.",
+    "invalidCredentials": "Incorrect username or password.",
+    "forbidden": "Nu ai permisiunea necesara.",
+    "notFound": "Nu am gasit resursa.",
+    "conflict": "Resursa exista deja.",
+    "attemptExpired": "Timpul a expirat — raspunsurile nu mai sunt acceptate.",
+    "validation": "Unele campuri necesita atentie.",
+    "server": "Serverul a intampinat o eroare.",
+    "page": {
+      "title": "Ceva nu a mers bine",
+      "subtitle": "O eroare neasteptata a intrerupt aceasta pagina. Incearca din nou, sau intoarce-te acasa.",
+      "notFoundTitle": "Pagina nu a fost gasita",
+      "notFoundSubtitle": "Pagina cautata nu exista sau a fost mutata.",
+      "details": "Detalii tehnice",
+      "reload": "Reincarca pagina",
+      "home": "Inapoi acasa"
+    }
+  },
+  "dashboard": {
+    "title": "Panou",
+    "subtitle": "Privire de ansamblu asupra programului de examene.",
+    "stats": {
+      "publishedExams": "Examene publicate",
+      "draftExams": "Ciorne",
+      "students": "Elevi",
+      "moderators": "Moderatori"
+    },
+    "moderator": {
+      "openScanner": "Deschide scanerul"
+    }
+  },
+  "exams": {
+    "title": "Examene",
+    "subtitle": "Creeaza, editeaza si publica examene.",
+    "new": "Examen nou",
+    "empty": "Niciun examen inca. Creeaza primul.",
+    "table": {
+      "title": "Titlu",
+      "status": "Stare",
+      "duration": "Durata",
+      "questions": "Intrebari",
+      "updated": "Actualizat"
+    },
+    "status": {
+      "draft": "Ciorna",
+      "published": "Publicat",
+      "archived": "Arhivat"
+    },
+    "create": {
+      "title": "Creare examen",
+      "subtitle": "Studentii pot fi confirmati in el dupa publicare.",
+      "name": "Titlu examen",
+      "namePlaceholder": "ex. Algebra I — Examen partial",
+      "nameHint": "Vizibil pentru studenti si proctori — pastreaza-l clar.",
+      "description": "Descriere (optional)",
+      "descriptionPlaceholder": "Ce acopera acest examen?",
+      "descriptionHint": "Context pentru proctori si studenti; afisat sub titlu.",
+      "timerMinutes": "Durata (minute)",
+      "questionsToServe": "Intrebari per student",
+      "serveHint": "Extrase din banca de intrebari; maxim 100.",
+      "passingScore": "Scor de trecere",
+      "passingHint": "O singura moda o data, sau niciuna — examenul este atunci fara notare.",
+      "passingMode": {
+        "none": "Niciunul",
+        "percent": "Procent",
+        "points": "Puncte fixe"
+      },
+      "cancel": "Anuleaza",
+      "submit": "Creeaza examen"
+    },
+    "search": "Cauta in titluri si descrieri…",
+    "noMatches": "Niciun examen nu corespunde filtrelor.",
+    "clearFilters": "Sterge filtrele",
+    "loadError": "Examenele nu au putut fi incarcate. Incearca din nou.",
+    "retry": "Incearca din nou",
+    "edit": {
+      "title": "Editeaza examenul",
+      "subtitle": "Actualizeaza setarile examenului. Rezultatele existente nu se modifica.",
+      "submit": "Salveaza modificarile",
+      "archived": "Examenele arhivate nu pot fi editate.",
+      "locked": "Published exams are locked — only title and description can be changed."
+    },
+    "delete": {
+      "title": "Stergi acest examen?"
+    },
+    "detail": {
+      "backToList": "← Toate examenele",
+      "publish": "Publica",
+      "published": "Publicat",
+      "addQuestion": "Adauga intrebare",
+      "passingPercent": "Trece ≥",
+      "passingPoints": "Trece ≥",
+      "moderators": {
+        "title": "Moderatori asignati",
+        "subtitle": "Doar moderatorii atasati (sau adminii) pot verifica candidatii la acest examen.",
+        "assign": "Asigneaza moderator",
+        "readOnlyHint": "Doar adminii pot asigna sau elimina moderatori.",
+        "emptyAdmin": "Niciun moderator asignat inca. Asigneaza unul pentru ca candidatii sa poata fi verificati.",
+        "emptyTeacher": "Niciun moderator asignat inca — un admin trebuie sa atasze moderatori inainte ca candidatii sa poata fi verificati.",
+        "active": "activ",
+        "inactive": "inactiv",
+        "remove": "Elimina",
+        "modal": {
+          "title": "Asigneaza moderator",
+          "description": "Atasaza un cont de moderator la acest examen. Acesta va putea verifica candidatii pentru el.",
+          "moderatorLabel": "Moderator",
+          "placeholder": "Alege un moderator…",
+          "emptyCandidates": "Toti moderatorii activi sunt deja asignati.",
+          "assign": "Asigneaza",
+          "cancel": "Anuleaza"
+        }
+      },
+      "archive": "Arhiveaza"
+    }
+  },
+  "questions": {
+    "form": {
+      "text": "Intrebare",
+      "options": "Optiuni",
+      "addOption": "+ Adauga optiune",
+      "removeOption": "Elimina",
+      "correct": "Corect",
+      "explanation": "Explicatie (optional)",
+      "tags": "Etichete (separate prin virgula)",
+      "submit": "Salveaza intrebarea"
+    }
+  },
+  "students": {
+    "title": "Elevi",
+    "subtitle": "Inregistrari doar de identitate. Fara parole.",
+    "new": "Elev nou",
+    "code": "Cod elev",
+    "name": "Nume complet",
+    "create": {
+      "title": "Adauga elev",
+      "codeHint": "Lasa gol pentru a genera automat codul urmator."
+    },
+    "edit": {
+      "title": "Editeaza elevul",
+      "subtitle": "Actualizeaza numele si datele de contact ale elevului.",
+      "codeHint": "Codul elevului este permanent si nu poate fi schimbat.",
+      "codeHintAdmin": "Administratorii pot realoca acest cod (de ex. pentru a corecta o greseala de tastare). Trebuie sa ramana unic.",
+      "cancel": "Anuleaza",
+      "submit": "Salveaza modificarile"
+    },
+    "search": {
+      "placeholder": "Cauta dupa nume sau cod…",
+      "label": "Cauta elevi"
+    },
+    "pagination": {
+      "of": "din",
+      "prev": "Anterioara",
+      "next": "Urmatoare",
+      "page": "Pagina {{page}} din {{pages}}"
+    },
+    "noResults": {
+      "title": "Niciun elev gasit",
+      "description": "Incearca un alt nume sau cod de elev."
+    }
+  },
+  "moderators": {
+    "title": "Moderatori",
+    "subtitle": "Personalul care confirma identitatea elevilor la fata locului.",
+    "new": "Moderator nou",
+    "code": "Cod PIN",
+    "create": {
+      "title": "Adauga moderator"
+    }
+  },
+  "verification": {
+    "title": "Verificare",
+    "subtitle": "Scaneaza codul QR al candidatului si verifica-l in persoana.",
+    "scanTitle": "Scaneaza codul QR",
+    "scanHint": "Indreapta camera catre ecranul candidatului sau tasteaza codul mai jos.",
+    "selectedTitle": "Cerere in revizuire",
+    "noSelection": "Nicio cerere selectata",
+    "noSelectionHint": "Scaneaza un cod QR sau alege un candidat din coada de mai jos.",
+    "notFound": "Cerere negasita",
+    "notFoundHint": "Codul poate fi gresit sau cererea poate fi expirata.",
+    "queueTitle": "Cereri in asteptare",
+    "live": "live",
+    "queueEmpty": "Nicio cerere in asteptare",
+    "queueEmptyHint": "Candidatii apar aici in momentul in care solicita verificarea.",
+    "queueEmptyHintUnassigned": "Cererile in asteptare pentru examenele la care esti asignat apar aici.",
+    "approve": "Aproba",
+    "verifyInPerson": "Verifica ca persoana corespunde datelor inainte de aprobare.",
+    "alreadyApproved": "Deja aprobat — candidatul poate incepe.",
+    "expired": "Cererea a expirat — rugati candidatul sa solicite din nou.",
+    "cameraUnavailable": "Camera indisponibila — foloseste introducerea manuala de mai jos.",
+    "manualPlaceholder": "Sau tasteaza codul…",
+    "manualSubmit": "Cauta",
+    "requests": {
+      "title": "Cereri",
+      "subtitle": "Toate cererile de verificare, grupate pe examene. Cele neverificate expira automat.",
+      "subtitleAssigned": "Cererile pentru examenele la care esti asignat. Doar un admin te poate atasza la alte examene.",
+      "scanCta": "Scaneaza QR",
+      "searchPlaceholder": "Cauta examene…",
+      "filters": {
+        "all": "Toate",
+        "pending": "In asteptare",
+        "verified": "Verificate"
+      },
+      "counts": {
+        "pending": "in asteptare",
+        "verified": "verificate"
+      },
+      "lastRequest": "Ultima cerere {{when}}",
+      "empty": "Niciun examen inca",
+      "emptyHint": "Cand exista examene, cererile lor de verificare apar aici.",
+      "emptyUnassigned": "Niciun examen asignat",
+      "emptyHintUnassigned": "Poti verifica candidati doar la examenele la care te-a atasat un admin. Cere unui admin sa te asigneze.",
+      "noMatch": "Niciun examen gasit",
+      "noMatchHint": "Incearca alt titlu.",
+      "detail": {
+        "subtitle": "{{total}} cereri in total · cele neverificate expira automat.",
+        "searchPlaceholder": "Cauta dupa elev, cod sau cod scurt…",
+        "empty": "Nicio cerere inca",
+        "emptyHint": "Cand candidatii solicita intrarea la acest examen, fiecare cerere este inregistrata aici.",
+        "noMatch": "Nicio cerere gasita",
+        "noMatchHint": "Incearca alt nume, cod sau filtru.",
+        "noDecision": "In asteptarea revizuirii",
+        "table": {
+          "student": "Elev",
+          "code": "Cod",
+          "status": "Stare",
+          "requested": "Solicitata",
+          "decision": "Decizie"
+        }
+      }
+    }
+  },
+  "confirm": {
+    "title": "Confirmare elev",
+    "subtitle": "Cauta elevul, tasteaza PIN-ul si porneste examenul.",
+    "studentCode": "Cod elev",
+    "yourPin": "PIN-ul tau",
+    "startExam": "Porneste examenul",
+    "started": "Examen pornit. Se redirectioneaza…"
+  },
+  "exam": {
+    "runner": {
+      "question": "Intrebarea {{n}} din {{total}}",
+      "timeLeft": "Timp ramas",
+      "expired": "Aceasta incercare a expirat.",
+      "signingOut": "Raspunsurile tale sunt salvate. Te deconectam…",
+      "signOutFailed": "Deconectarea automata a esuat.",
+      "retry": "Incearca din nou",
+      "submit": "Trimite examenul",
+      "submitted": "Trimis",
+      "previous": "Inapoi",
+      "next": "Inainte",
+      "selectOne": "Alege un raspuns",
+      "selectMany": "Alege toate raspunsurile corecte",
+      "submitDialog": {
+        "title": "Trimiti examenul?",
+        "allAnswered": "Ai raspuns la toate cele {{total}} intrebari. Dupa trimitere, raspunsurile nu mai pot fi schimbate.",
+        "unanswered": "{{count}} din {{total}} intrebari sunt inca fara raspuns.",
+        "unansweredNote": "Le poti revizui sau trimite examenul asa. Dupa trimitere, raspunsurile nu mai pot fi schimbate.",
+        "submit": "Trimite examenul",
+        "submitAnyway": "Trimite oricum",
+        "cancel": "Anuleaza",
+        "lockedHint": "Trimiterea se deblocheaza intr-o clipa."
+      }
+    },
+    "result": {
+      "title": "Rezultat",
+      "score": "{{correct}} din {{total}} corecte",
+      "percent": "{{pct}}%",
+      "passed": "Promovat",
+      "failed": "Nepromovat",
+      "shareLink": "Link-ul tau privat"
+    }
+  },
+  "face": {
+    "gateTitle": "Look at the camera",
+    "gateHint": "Face only · no typing · university kiosk",
+    "notRecognized": "Not recognized. Go to the enrollment desk.",
+    "enrollTitle": "Face enrollment",
+    "consent": "Student consents to face template + photo storage (UZ university ID & enrollment). Kept until revoke/deletion.",
+    "revoke": "Revoke face"
+  },
+  "staff": {
+    "title": "Personal",
+    "subtitle": "Conturile se creeaza doar aici, de catre un administrator. Nu exista inregistrare publica.",
+    "new": "Personal nou",
+    "fullName": "Nume complet",
+    "password": "Parola",
+    "newPassword": "Parola noua",
+    "role": "Rol",
+    "roleTeacher": "Profesor",
+    "roleAdmin": "Administrator",
+    "usernameHint": "Litere mici, cifre, _ . - · 3–40 caractere",
+    "cancel": "Anuleaza",
+    "created": "Cont de personal creat.",
+    "createFailed": "Contul nu a putut fi creat. Username-ul poate fi deja folosit.",
+    "passwordReset": "Parola a fost actualizata. Utilizatorul trebuie sa se reconecteze.",
+    "resetFailed": "Parola nu a putut fi resetata.",
+    "resetPassword": "Reseteaza parola",
+    "emptyTitle": "Niciun cont de personal",
+    "emptyDescription": "Creeaza primul cont de profesor. Personalul se poate conecta doar dupa ce un administrator il creeaza.",
+    "create": {
+      "title": "Personal nou",
+      "submit": "Creeaza cont"
+    },
+    "reset": {
+      "title": "Resetare parola",
+      "subtitle": "Seteaza o parola noua pentru @{{username}}. Sesiunile curente vor fi revocate.",
+      "submit": "Seteaza parola"
+    },
+    "search": {
+      "placeholder": "Cauta dupa nume, username sau rol…",
+      "label": "Cauta personal"
+    },
+    "noResults": {
+      "title": "Niciun membru gasit",
+      "description": "Incearca un alt nume, username sau rol."
+    }
+  }
+}

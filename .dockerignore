@@ -1,0 +1,27 @@
+# Build output
+target/
+build/
+out/
+
+# VCS / IDE
+.git/
+.gitignore
+.gitattributes
+.idea/
+*.iml
+.vscode/
+
+# Docs and reference material (not needed to build the app image)
+*.md
+HELP.md
+draft.md
+reference-code-for-exam-project/
+
+# Local environment files
+.env
+.env.*
+!.env.docker.example
+
+# OS noise
+.DS_Store
+Thumbs.db

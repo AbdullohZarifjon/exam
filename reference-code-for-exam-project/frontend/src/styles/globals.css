@@ -1,0 +1,206 @@
+
+@import "tailwindcss";
+
+/* =====================================================================
+   Bilim Design System — Navy Professional
+   Mode: Operate (app UI, dashboards, kiosk). Clean, no noise.
+   Palette: deep navy identity with sky + teal accents on cool mist.
+   Typography: Geist Sans everywhere (offline-safe, no CDN), tight tracking.
+   Motion: GSAP staggered hero + fade/rise reveals only, reduced-motion gated.
+===================================================================== */
+@theme {
+    --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, "Cascadia Code", "SF Mono", monospace;
+
+    /* Navy core */
+    --color-navy-950: #060D1F;
+    --color-navy-900: #0A1931;
+    --color-navy-800: #0F2340;
+    --color-navy-700: #16315E;
+    --color-navy-600: #1E3A8A;
+    --color-navy-500: #2B4C9A;
+
+    /* App surface tokens (updated for navy system) */
+    --color-bg: #F2F5FB;
+    --color-surface: #FFFFFF;
+    --color-border: #E1E8F5;
+    --color-border-strong: #CBD6EF;
+    --color-text: #0A1931;
+    --color-text-muted: #5B6B8C;
+
+    /* Accent — navy primary + sky */
+    --color-accent: #1E3A8A;
+    --color-accent-hover: #16306E;
+    --color-accent-soft: #E8EEFC;
+    --color-accent-bright: #3B82F6;
+    --color-teal: #0EA5A0;
+    --color-teal-soft: #E0F6F5;
+}
+
+@layer base {
+    html {
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: var(--color-bg);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+    body {
+        min-height: 100dvh;
+    }
+    h1, h2, h3 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        letter-spacing: -0.032em;
+        text-wrap: balance;
+    }
+    :focus-visible {
+        outline: 2px solid var(--color-accent-bright);
+        outline-offset: 2px;
+        border-radius: 6px;
+    }
+    input, select, textarea {
+        font-size: 16px;
+    }
+    ::selection {
+        background: #1E3A8A;
+        color: #FFFFFF;
+    }
+}
+
+/* Subtle navy ambient grid for kiosk hero only — no noise elsewhere */
+.kiosk-hero {
+    background:
+        radial-gradient(820px 520px at 58% -10%, rgba(59,130,246,0.18), transparent 62%),
+        radial-gradient(640px 420px at 12% -20%, rgba(14,165,160,0.10), transparent 58%),
+        linear-gradient(180deg, #08142E 0%, #0A1931 58%, #0F2340 100%);
+}
+
+.kiosk-wash {
+    background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(720px 460px at 50% 28%, black, transparent 72%);
+}
+
+/* Navy sidebar glass */
+.nav-rail {
+    background: linear-gradient(180deg, #08142E 0%, #0A1931 45%, #0F2340 100%);
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+.nav-rail::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(420px 280px at 22% 8%, rgba(59,130,246,0.16), transparent 62%);
+    pointer-events: none;
+}
+
+/* Face scan ring — the one memorable motion moment */
+@keyframes scan-ring {
+    0% { transform: scale(0.92); opacity: 0.9; }
+    70% { transform: scale(1.14); opacity: 0; }
+    100% { transform: scale(1.14); opacity: 0; }
+}
+@keyframes scan-sweep {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+.scan-ring-ring { animation: scan-ring 2.2s cubic-bezier(0.16,1,0.3,1) infinite; }
+.scan-ring-ring-delay { animation: scan-ring 2.2s cubic-bezier(0.16,1,0.3,1) 0.5s infinite; }
+.scan-line { animation: scan-sweep 2.4s ease-in-out infinite alternate; }
+
+/* Inputs — navy focus.
+   Lives in @layer components so Tailwind utilities (e.g. pl-9 for search
+   icons) win — unlayered rules would beat the utilities layer and break
+   every icon search field. */
+@layer components {
+    .input {
+        height: 2.625rem;
+        width: 100%;
+        border-radius: 0.625rem;
+        border: 1px solid var(--color-border);
+        background: var(--color-surface);
+        padding: 0 0.875rem;
+        font-size: 0.875rem;
+        color: var(--color-text);
+        transition: border-color 150ms, box-shadow 150ms;
+    }
+    .input::placeholder { color: #8A9BB8; }
+    .input:focus {
+        outline: none;
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px rgba(59,130,246,0.16);
+    }
+    .input:disabled { background: #EDF1F9; color: #8A9BB8; }
+
+    .textarea {
+        min-height: 6.5rem;
+        width: 100%;
+        border-radius: 0.625rem;
+        border: 1px solid var(--color-border);
+        background: var(--color-surface);
+        padding: 0.625rem 0.875rem;
+        font-size: 0.875rem;
+        color: var(--color-text);
+        transition: border-color 150ms, box-shadow 150ms;
+    }
+    .textarea:focus {
+        outline: none;
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 3px rgba(59,130,246,0.16);
+    }
+}
+
+.btn-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.625rem;
+    padding: 0 1.125rem;
+    height: 2.625rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: background 150ms, border-color 150ms, transform 80ms, box-shadow 150ms;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.btn-base:active:not(:disabled) { transform: translateY(1px) scale(0.99); }
+.btn-base:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-primary { background: var(--color-accent); color: #FFFFFF; box-shadow: 0 8px 20px -10px rgba(30,58,138,0.55); }
+.btn-primary:hover:not(:disabled) { background: var(--color-accent-hover); }
+.btn-secondary { background: var(--color-surface); color: var(--color-text); border-color: var(--color-border-strong); }
+.btn-secondary:hover:not(:disabled) { background: var(--color-accent-soft); border-color: #A8BCF0; }
+.btn-ghost { background: transparent; color: #24365E; }
+.btn-ghost:hover:not(:disabled) { background: var(--color-accent-soft); }
+.btn-danger { background: #9E2A2B; color: #FFFFFF; }
+.btn-danger:hover:not(:disabled) { background: #822123; }
+
+/* Modal */
+@keyframes modal-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modal-backdrop-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes modal-panel-in { from { opacity: 0; transform: translateY(12px) scale(0.97); } to { opacity: 1; transform: none; } }
+@keyframes modal-panel-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(8px) scale(0.98); } }
+
+.modal-backdrop { background: rgb(6 13 31 / 0.52); animation: modal-backdrop-in 180ms ease-out both; }
+.modal-backdrop-exit { animation: modal-backdrop-out 150ms ease-in both; }
+.modal-panel {
+    box-shadow: 0 24px 64px -16px rgb(6 13 31 / 0.32), 0 2px 8px rgb(6 13 31 / 0.08);
+    animation: modal-panel-in 260ms cubic-bezier(0.16,1,0.3,1) both;
+}
+.modal-panel-exit { animation: modal-panel-out 150ms ease-in both; }
+
+/* GSAP reveal defaults — also gated by reduced motion */
+.gsap-reveal { opacity: 0; }
+.no-js .gsap-reveal, .gsap-reveal[data-revealed="true"] { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+    .modal-backdrop, .modal-backdrop-exit, .modal-panel, .modal-panel-exit { animation-duration: 1ms; }
+    .scan-ring-ring, .scan-ring-ring-delay, .scan-line { animation: none; }
+    .gsap-reveal { opacity: 1 !important; transform: none !important; }
+}

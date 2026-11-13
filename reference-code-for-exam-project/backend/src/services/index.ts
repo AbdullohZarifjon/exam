@@ -1,0 +1,10 @@
+export * as authService from './auth.service.js';
+export * as examService from './exam.service.js';
+export * as questionService from './question.service.js';
+export * as attemptService from './attempt.service.js';
+export * as studentService from './student.service.js';
+export * as studentCodeService from './student-code.service.js';
+export * as identityService from './identity.service.js';
+export * as uploadService from './upload.service.js';
+export * as biometricService from './biometric.service.js';
+export * as faceAuthService from './face-auth.service.js';

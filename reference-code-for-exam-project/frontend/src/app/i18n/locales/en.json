@@ -1,0 +1,355 @@
+{
+  "app": {
+    "name": "Bilim",
+    "tagline": "Universitetlar uchun zamonaviy imtihon tizimi."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "exams": "Exams",
+    "students": "Students",
+    "moderators": "Moderators",
+    "requests": "Requests",
+    "signOut": "Sign out",
+    "signIn": "Sign in",
+    "main": "Main navigation",
+    "faceEnrollment": "Face enrollment",
+    "staff": "Staff",
+    "verification": "Verification"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Use your staff username to access the platform.",
+      "email": "Username",
+      "password": "Password",
+      "submit": "Sign in",
+      "submitting": "Signing in…"
+    },
+    "loggedOut": "Signed out successfully."
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Cannot reach the server. Check your connection.",
+    "badRequest": "That request was invalid.",
+    "unauthorized": "Please sign in to continue.",
+    "invalidCredentials": "Incorrect username or password.",
+    "forbidden": "You don't have permission to do that.",
+    "notFound": "We couldn't find that resource.",
+    "conflict": "That resource already exists.",
+    "attemptExpired": "Time is up — answers are no longer accepted.",
+    "validation": "Some fields need attention.",
+    "server": "The server hit an error. Try again in a moment.",
+    "page": {
+      "title": "Something went wrong",
+      "subtitle": "An unexpected error interrupted this page. Try again, or head back home.",
+      "notFoundTitle": "Page not found",
+      "notFoundSubtitle": "The page you're looking for doesn't exist or was moved.",
+      "details": "Technical details",
+      "reload": "Reload page",
+      "home": "Go home"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Snapshot of your exam program.",
+    "stats": {
+      "publishedExams": "Published exams",
+      "draftExams": "Drafts",
+      "students": "Students",
+      "moderators": "Moderators"
+    },
+    "moderator": {
+      "openScanner": "Open scanner"
+    }
+  },
+  "exams": {
+    "title": "Exams",
+    "subtitle": "Create, edit, and publish exams.",
+    "new": "New exam",
+    "empty": "No exams yet. Create your first one.",
+    "table": {
+      "title": "Title",
+      "status": "Status",
+      "duration": "Duration",
+      "questions": "Questions",
+      "updated": "Updated"
+    },
+    "status": {
+      "draft": "Draft",
+      "published": "Published",
+      "archived": "Archived"
+    },
+    "create": {
+      "title": "Create exam",
+      "subtitle": "Students can be confirmed into it once it is published.",
+      "name": "Exam title",
+      "namePlaceholder": "e.g. Algebra I — Midterm",
+      "nameHint": "Shown to students and proctors — keep it recognisable.",
+      "description": "Description (optional)",
+      "descriptionPlaceholder": "What does this exam cover?",
+      "descriptionHint": "Context for proctors and students; shown under the title.",
+      "timerMinutes": "Duration (minutes)",
+      "questionsToServe": "Questions per student",
+      "serveHint": "Drawn from the bank; max 100.",
+      "passingScore": "Passing score",
+      "passingHint": "One mode at a time, or none — the exam is then ungraded.",
+      "passingMode": {
+        "none": "None",
+        "percent": "Percent",
+        "points": "Fixed points"
+      },
+      "cancel": "Cancel",
+      "submit": "Create exam"
+    },
+    "search": "Search titles and descriptions…",
+    "noMatches": "No exams match your filters.",
+    "clearFilters": "Clear filters",
+    "loadError": "Could not load exams. Please try again.",
+    "retry": "Try again",
+    "edit": {
+      "title": "Edit exam",
+      "subtitle": "Update exam settings. Existing submissions are not changed.",
+      "submit": "Save changes",
+      "archived": "Archived exams cannot be edited.",
+      "locked": "Published exams are locked — only title and description can be changed."
+    },
+    "delete": {
+      "title": "Delete this exam?"
+    },
+    "detail": {
+      "backToList": "← All exams",
+      "publish": "Publish",
+      "published": "Published",
+      "addQuestion": "Add question",
+      "passingPercent": "Pass ≥",
+      "passingPoints": "Pass ≥",
+      "moderators": {
+        "title": "Assigned moderators",
+        "subtitle": "Only attached moderators (or admins) can verify candidates for this exam.",
+        "assign": "Assign moderator",
+        "readOnlyHint": "Only admins can assign or remove moderators.",
+        "emptyAdmin": "No moderators assigned yet. Assign one so candidates can be verified.",
+        "emptyTeacher": "No moderators assigned yet — an admin must attach moderators before candidates can be verified.",
+        "active": "active",
+        "inactive": "inactive",
+        "remove": "Remove",
+        "modal": {
+          "title": "Assign moderator",
+          "description": "Attach a moderator account to this exam. They will be able to verify candidates for it.",
+          "moderatorLabel": "Moderator",
+          "placeholder": "Select a moderator…",
+          "emptyCandidates": "Every active moderator is already assigned.",
+          "assign": "Assign",
+          "cancel": "Cancel"
+        }
+      },
+      "archive": "Archive"
+    }
+  },
+  "questions": {
+    "form": {
+      "text": "Question",
+      "options": "Options",
+      "addOption": "+ Add option",
+      "removeOption": "Remove",
+      "correct": "Correct",
+      "explanation": "Explanation (optional)",
+      "tags": "Tags (comma-separated)",
+      "submit": "Save question"
+    }
+  },
+  "students": {
+    "title": "Students",
+    "subtitle": "Identity-only records. No passwords.",
+    "new": "New student",
+    "code": "Student code",
+    "name": "Full name",
+    "create": {
+      "title": "Add student",
+      "codeHint": "Leave empty to generate the next code automatically."
+    },
+    "edit": {
+      "title": "Edit student",
+      "subtitle": "Update the student's name and contact info.",
+      "codeHint": "The student code is permanent and can't be changed.",
+      "codeHintAdmin": "Admins can re-assign this code (e.g. to fix a typo). It must stay unique.",
+      "cancel": "Cancel",
+      "submit": "Save changes"
+    },
+    "search": {
+      "placeholder": "Search by name or code…",
+      "label": "Search students"
+    },
+    "pagination": {
+      "of": "of",
+      "prev": "Previous",
+      "next": "Next",
+      "page": "Page {{page}} of {{pages}}"
+    },
+    "noResults": {
+      "title": "No matching students",
+      "description": "Try a different name or student code."
+    }
+  },
+  "moderators": {
+    "title": "Moderators",
+    "new": "New moderator",
+    "empty": {
+      "title": "No moderators yet",
+      "description": "Add at least one moderator account so exams can be verified in person."
+    },
+    "create": {
+      "title": "Add moderator",
+      "passwordHint": "Hashed at rest; never returned."
+    }
+  },
+  "verification": {
+    "title": "Verification",
+    "subtitle": "Scan a candidate's QR code and verify them in person.",
+    "scanTitle": "Scan QR code",
+    "scanHint": "Point the camera at the candidate's screen, or type the code below.",
+    "selectedTitle": "Request under review",
+    "noSelection": "No request selected",
+    "noSelectionHint": "Scan a QR code or pick a candidate from the queue below.",
+    "notFound": "Request not found",
+    "notFoundHint": "The code may be wrong or the request may have expired.",
+    "queueTitle": "Pending requests",
+    "live": "live",
+    "queueEmpty": "No pending requests",
+    "queueEmptyHint": "Candidates appear here the moment they request verification.",
+    "queueEmptyHintUnassigned": "Pending requests for your assigned exams appear here.",
+    "approve": "Approve",
+    "verifyInPerson": "Verify the person matches their details before approving.",
+    "alreadyApproved": "Already approved — the candidate can start.",
+    "expired": "This request has expired — ask the candidate to request again.",
+    "cameraUnavailable": "Camera unavailable — use manual entry below.",
+    "manualPlaceholder": "Or type the code…",
+    "manualSubmit": "Look up",
+    "requests": {
+      "title": "Requests",
+      "subtitle": "Every verification request, grouped by exam. Unverified requests expire automatically.",
+      "subtitleAssigned": "Requests for the exams you are assigned to. Only an admin can attach you to more exams.",
+      "scanCta": "Scan QR",
+      "searchPlaceholder": "Search exams…",
+      "filters": {
+        "all": "All",
+        "pending": "Pending",
+        "verified": "Verified"
+      },
+      "counts": {
+        "pending": "pending",
+        "verified": "verified"
+      },
+      "lastRequest": "Last request {{when}}",
+      "empty": "No exams yet",
+      "emptyHint": "Once exams exist, their verification requests are listed here.",
+      "emptyUnassigned": "No assigned exams",
+      "emptyHintUnassigned": "You can only verify candidates for exams an admin has attached you to. Ask an admin to assign you.",
+      "noMatch": "No exams match",
+      "noMatchHint": "Try a different title.",
+      "detail": {
+        "subtitle": "{{total}} requests in total · unverified ones expire automatically.",
+        "searchPlaceholder": "Search by student, code, or short code…",
+        "empty": "No requests yet",
+        "emptyHint": "When candidates ask to enter this exam, every request is recorded here.",
+        "noMatch": "No requests match",
+        "noMatchHint": "Try another name, code, or filter.",
+        "noDecision": "Awaiting review",
+        "table": {
+          "student": "Student",
+          "code": "Code",
+          "status": "Status",
+          "requested": "Requested",
+          "decision": "Decision"
+        }
+      }
+    }
+  },
+  "confirm": {
+    "title": "Confirm student",
+    "subtitle": "Look up the student, type your PIN, and start the exam.",
+    "studentCode": "Student code",
+    "yourPin": "Your PIN",
+    "startExam": "Start exam",
+    "started": "Exam started. Redirecting…"
+  },
+  "exam": {
+    "runner": {
+      "question": "Question {{n}} of {{total}}",
+      "timeLeft": "Time left",
+      "expired": "This attempt has expired.",
+      "signingOut": "Your answers are saved. Signing you out…",
+      "signOutFailed": "Automatic sign-out failed.",
+      "retry": "Try again",
+      "submit": "Submit exam",
+      "submitted": "Submitted",
+      "previous": "Previous",
+      "next": "Next",
+      "selectOne": "Select one answer",
+      "selectMany": "Select all that apply",
+      "submitDialog": {
+        "title": "Submit exam?",
+        "allAnswered": "You answered all {{total}} questions. After submitting, answers cannot be changed.",
+        "unanswered": "{{count}} of {{total}} questions are still unanswered.",
+        "unansweredNote": "Review them or submit the exam as is. After submitting, answers cannot be changed.",
+        "submit": "Submit exam",
+        "submitAnyway": "Submit anyway",
+        "cancel": "Cancel",
+        "lockedHint": "Submit unlocks shortly."
+      }
+    },
+    "result": {
+      "title": "Result",
+      "score": "{{correct}} of {{total}} correct",
+      "percent": "{{pct}}%",
+      "passed": "Passed",
+      "failed": "Did not pass",
+      "shareLink": "Your private link"
+    }
+  },
+  "face": {
+    "gateTitle": "Look at the camera",
+    "gateHint": "Face only · no typing · university kiosk",
+    "notRecognized": "Not recognized. Go to the enrollment desk.",
+    "enrollTitle": "Face enrollment",
+    "consent": "Student consents to face template + photo storage (UZ university ID & enrollment). Kept until revoke/deletion.",
+    "revoke": "Revoke face"
+  },
+  "staff": {
+    "title": "Staff",
+    "subtitle": "Accounts are created only here, by an admin. There is no public registration.",
+    "new": "New staff member",
+    "fullName": "Full name",
+    "password": "Password",
+    "newPassword": "New password",
+    "role": "Role",
+    "roleTeacher": "Teacher",
+    "roleAdmin": "Admin",
+    "usernameHint": "Lowercase letters, numbers, _ . - · 3–40 chars",
+    "cancel": "Cancel",
+    "created": "Staff account created.",
+    "createFailed": "Could not create the staff account. The username may already be taken.",
+    "passwordReset": "Password updated. That user must sign in again.",
+    "resetFailed": "Could not reset the password.",
+    "resetPassword": "Reset password",
+    "emptyTitle": "No staff accounts yet",
+    "emptyDescription": "Create the first teacher account. Staff can only sign in after an admin creates them.",
+    "create": {
+      "title": "New staff member",
+      "submit": "Create account"
+    },
+    "reset": {
+      "title": "Reset password",
+      "subtitle": "Set a new password for @{{username}}. Their current sessions will be revoked.",
+      "submit": "Set password"
+    },
+    "search": {
+      "placeholder": "Search by name, username or role…",
+      "label": "Search staff"
+    },
+    "noResults": {
+      "title": "No matching staff",
+      "description": "Try a different name, username or role."
+    }
+  }
+}
